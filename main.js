@@ -16,8 +16,13 @@ for(let contador  = 0 ; contador < 9 ; contador++){
     tecla.onclick = function (){
         playSonido(idSound)
     }
-    contador++
-    console.log("vuelta " + contador)
+
+    tecla.onkeydown = function(e){
+        if(e.code === 'Space' || e.code === 'Enter'){
+            tecla.classList.add('activa')
+        }
+    }
+    tecla.onkeyup = function(){
+        tecla.classList.remove('activa')
+    }
 }
-
-
